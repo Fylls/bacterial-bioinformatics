@@ -22,12 +22,12 @@ Annotation. It'll identify the nearest neighbor to the genome and it will perfor
 
  Auto, Unicycler, SPAdes, Canu, metaSPAdes, plasmidSPAdes, and MDA (single-cell). 
 
-Unicycler
+Unicycler.
 Unicycler can use both long and short reads. It generally takes a longer time, but it does a really good job.
 What it'll do is it'll take the long reads and then improve, not polish, but bring on the short reads to improve the assembly.
 That's an important distinction between Unicycler and Canu.
 
-Canu
+Canu.
 also will take long and short reads, but it first builds the initial assembly with the long reads, and then it polishes it with the short reads.
 There's a little bit of a difference there.
 
@@ -39,60 +39,17 @@ MDA. What's gaining in popularity is people isolating single cells and generatin
 If you pick Auto, and you have only long reads, it's going to do Canu. If you have both long and short reads, it's going to pick Unicycler. If you only have short reads, it's going to pick Unicycler. 
 
 
+Now this is a circular view of all the annotations in the genome, and each of these rings has a bit of different information. Outside this dark blue ring, this is an indication of how many contents. And we know that therefore in this genome, so there's one big one, and there are three small ones. Having looked at this organism previously, I know that this is a Staph aureus genome that was done with PAC bio sequencing. So it's got one chromosome and three plasmid, so you're seeing the three plasmids here. The next circle in are the teams on the forward strand, the next one are the jeans on the reverse strand. And you don't have to remember it showing you the order of these things right here. The third one are the RNA chains which include the ribosomal RNA genes and the tRNA genes. These are fits to virulence factors, any genome annotated in Patrick is blasted against specific databases for variance factors for antimicrobial resistance genes for transposons for drug targets in human homologs. In this view, we only show you the virulence factors here and the antimicrobial resistance genes here. And then the last two ones are GC content and GC skew. Why would you want to see that? because sometimes they are an indication of horizontal transfer between different organisms. When you see a significant change in the GC content like is indicated here and here, that's an indication of potential area that might have come in by horizontal transfer. Now you notice that some of these jeans are colored. What do the colors mean? If go down, we have a specific thing that we do at Patrick and also at Rask which is doing this subsystem analysis, where we have curators who are trying to group together jeans that are known to have a specific function by particular classes. So if these genes are blue it's an indication that they are involved in metabolism. If they're orange, it's an indication that they are involved in protein processing. It's just a way for you to see how things are distributed across the organism. Earlier I told you that we blast against specific databases, transporters virulence factors, drug card the pits, an antibiotic resistance genes. The citations for those are provided here. And this shows you the number of chains that this particular organism had that had significant blast his. When it was blasted against CARD, or NDARO, or the Patrick antimicrobial resistance genes, etc.
 
 
-Now this is a circular view of all the annotations in the genome, and each of these rings has a bit of different information.
+GC content GC skew, horizontal gene transfert
 
-Outside this dark blue ring, this is an indication of how many contigs and we know that therefore in this genome, so there's one big one, and there are three small ones.
-Having looked at this organism previously, I know that this is a Staph aureus genome that was done with PAC bio sequencing.
-So it's got one chromosome and three plasmid, so you're seeing the three plasmids here.
-The next circle in are the teams on the forward strand, the next one are the jeans on the reverse strand.
-And you don't have to remember it showing you the order of these things right here.
-The third one are the RNA chains which include the ribosomal RNA genes and the tRNA genes.
-These are fits to virulence factors, any genome annotated in Patrick is blasted against specific databases for variance factors for antimicrobial
-resistance genes for transposons for drug targets in human homologs.
-In this view, we only show you the virulence factors here and the antimicrobial resistance genes here.
-And then the last two ones are GC content and GC skew.
-
-Why would you want to see that? because sometimes they are an indication of horizontal transfer between different organisms.
-When you see a significant change in the GC content like is indicated here and here, that's an indication of potential
-area that might have come in by horizontal transfer.
-Now you notice that some of these jeans are colored. What do the colors mean? If go down, we have a specific thing that we do at Patrick and also at Rask
-which is doing this subsystem analysis, where we have curators who are trying to group together jeans that are known to have a specific function by particular classes.
-So if these genes are blue it's an indication that they are involved in metabolism. If they're orange, it's an indication that they are involved in protein processing.
-It's just a way for you to see how things are distributed across the organism.
-Earlier I told you that we blast against specific databases, transporters virulence factors, drug card the pits, an antibiotic resistance genes.
-The citations for those are provided here. And this shows you the number of chains that this particular organism had that had significant blast his.
-When it was blasted against CARD, or NDARO, or the Patrick antimicrobial resistance genes, etc.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+other thing that we do in Patrick for specific organisms where we have enough data, we've done in machine learning process to try to identify specific regions of the genome that are indicative of susceptibility or resistance to antibiotics. Staphylococcus aureus is one of those genomes that we have a lot of data on, and that we were able to run this machine learning process on. When any genome up that genus and species is annotated and Patrick, we look at that data and try to see if it has any of those classifiers that we identify with that. And you can see that this particular genome has indications of being resistant to Penicillin, and susceptible to a number of antibiotics. So that's a pretty useful service for some organisms that we have in Patrick.
+Play video starting at :9:12 and follow transcript9:12
+As antimicrobial resistance is very important NAIAD, and it's becoming of global important. We have a calmer based antimicrobial genes detection method that are blasted against them. And these are jeans that were found in my particular genome that might be confirming resistant to specific antibiotics.
+Play video starting at :9:40 and follow transcript9:40
+And then the last thing we do is we go through when you submit a genome to Patrick, it looks across the Nyack reference and representative genomes to see if it can find some close relatives, to give you an indication of where that genome is in the greats. Team of bacterial life. We go in and identify the closest reference and representative genomes by Maschmann Hash, and here's the citation for it. And then we gather all the global protein families, which are the cross-genus families, and we use five of those to generate a phylogenetic tree. Now in PATRIC we use our phylogenetic tree pipeline, which takes the amino acids and the nucleotide sequences for both of those yet concatenates them together in the alignment and then this alignment is used to build the tree. And here's the tree here and here at the support values for that tree, this is only on five genes. You should try to use more than that. If you're going to publish on this genome and publish a phylogenetic tree, you should do a more robust analysis of the phylogeny rather than just five genes. I looked at every paper that cites PATRIC, and I tweet about it and Facebook about it. So you should cite us because I tried to publicize your data. And when I see someone using these particular trees, because I know what they look like and I'm like, no, please do a more robust analysis. Here are the references that are included up in the information above. So this is a very useful report. And the main things that gives you is some indication of the quality of your genome and where it rests on the grand scheme of things. Now in the subsequent videos, we'll look more at the different files that come with the comprehensive genome analysis job and then we'll explore what that genome looks like when it's in PATRIC. Thanks for joining.
+Play video starting at :12: and follow transcript12:00
 
 
 
