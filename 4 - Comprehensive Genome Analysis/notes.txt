@@ -1,0 +1,110 @@
+the Comprehensive Genome Analysis Service. What does it do?
+
+It provides you an assembly and an annotation. You can jump in at either place, you can jump in at assembly, or you can jump in at annotation.
+It'll give you, like these other services, very similar, indication of genome quality.
+
+antimicrobial resistance,
+phenotype predictions,
+the genes of interest,
+functional categories.
+
+But one thing it gives you that isn't provided in simply an annotation is we give you a quick phylogenetic tree,
+taking your genome and looking at other reference genomes and seeing where your genome stands in that.
+
+But the main thing that I like the most is we've created this awesome report that you can use.
+It combines all those things together so you don't have to drill down into anything.
+We've tried to stylize it in a way like you do a genome report for a publication, so that you can use it and it provides the references and everything else. 
+
+
+It's a streamlined analysis meta-service that accepts raw reads or contexts and it performs a comprehensive analysis that includes assembling or not if you just submit context.
+Annotation. It'll identify the nearest neighbor to the genome and it will perform a comprehensive analysis that includes a subsystem summary, a phylogenetic tree, and features that distinguish the genome from its nearest neighbors.
+
+
+ Auto, Unicycler, SPAdes, Canu, metaSPAdes, plasmidSPAdes, and MDA (single-cell). 
+
+Unicycler
+Unicycler can use both long and short reads. It generally takes a longer time, but it does a really good job.
+What it'll do is it'll take the long reads and then improve, not polish, but bring on the short reads to improve the assembly.
+That's an important distinction between Unicycler and Canu.
+
+Canu
+also will take long and short reads, but it first builds the initial assembly with the long reads, and then it polishes it with the short reads.
+There's a little bit of a difference there.
+
+SPAdes takes only short reads, and there are several variations of SPAdes;
+metaSPAdes for metagenomic reads; plasmidSPAdes if you've sequenced to plasmid;
+
+MDA. What's gaining in popularity is people isolating single cells and generating an assembly from that. MDA does that.
+
+If you pick Auto, and you have only long reads, it's going to do Canu. If you have both long and short reads, it's going to pick Unicycler. If you only have short reads, it's going to pick Unicycler. 
+
+
+
+
+Now this is a circular view of all the annotations in the genome, and each of these rings has a bit of different information.
+
+Outside this dark blue ring, this is an indication of how many contigs and we know that therefore in this genome, so there's one big one, and there are three small ones.
+Having looked at this organism previously, I know that this is a Staph aureus genome that was done with PAC bio sequencing.
+So it's got one chromosome and three plasmid, so you're seeing the three plasmids here.
+The next circle in are the teams on the forward strand, the next one are the jeans on the reverse strand.
+And you don't have to remember it showing you the order of these things right here.
+The third one are the RNA chains which include the ribosomal RNA genes and the tRNA genes.
+These are fits to virulence factors, any genome annotated in Patrick is blasted against specific databases for variance factors for antimicrobial
+resistance genes for transposons for drug targets in human homologs.
+In this view, we only show you the virulence factors here and the antimicrobial resistance genes here.
+And then the last two ones are GC content and GC skew.
+
+Why would you want to see that? because sometimes they are an indication of horizontal transfer between different organisms.
+When you see a significant change in the GC content like is indicated here and here, that's an indication of potential
+area that might have come in by horizontal transfer.
+Now you notice that some of these jeans are colored. What do the colors mean? If go down, we have a specific thing that we do at Patrick and also at Rask
+which is doing this subsystem analysis, where we have curators who are trying to group together jeans that are known to have a specific function by particular classes.
+So if these genes are blue it's an indication that they are involved in metabolism. If they're orange, it's an indication that they are involved in protein processing.
+It's just a way for you to see how things are distributed across the organism.
+Earlier I told you that we blast against specific databases, transporters virulence factors, drug card the pits, an antibiotic resistance genes.
+The citations for those are provided here. And this shows you the number of chains that this particular organism had that had significant blast his.
+When it was blasted against CARD, or NDARO, or the Patrick antimicrobial resistance genes, etc.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

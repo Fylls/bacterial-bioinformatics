@@ -1,0 +1,106 @@
+WHEN
+We have an organism,
+we isolate DNA from it,
+that DNA has sequence,
+we have assembly.
+
+WHAT
+Then on the assembly we start calling genes and mapping them to the time ticks, which represent the chromosomes in the organism.
+Another thing we do other than mapping the genes is we assign protein families, and then we also map those protein families to pathways
+
+HOW
+The first thing that happens is it calls the rRNAs then the tRNAs, it searches for repeat regions,
+it looks for special proteins with special coding regions, and it also calls CRISPRs.
+Then they call protein-coding genes. We use two gene callers to do this, Prodigal and Glimmer3
+
+INTEGRATION
+For the protein families, one of the good things about annotating a genome in PATRIC is can become virtually integrated with all of the public data that's there.
+Every single genome in PATRIC is annotated the same way so it's consistent.
+You can identify differences and look at how things are similar or different from each other. One of the keys to doing this is looking at the protein families.
+Every genome that's annotated in PATRIC gets two flavors of protein families. A global family which crosses all genre and a local family which is genus specific. 
+
+
+====================
+    PARAMETERS
+====================
+
+CONSISTENCY
+is the percentage of roles: genes whose presence or absence was correctly predicted (depenidng on the reference genome of the species).
+A higher number indicates the genome annotation is more self-consistent.
+By self-consistency, we mean that the genes that we expect to be found in the presence of other genes were actually found and those that were expected to be absent were not found.
+An example would be let's say you have a bacterium that has a flagellum or maybe that you know does perform some biochemical function along in a biochemical pathway.
+If you know the organism does that, you expect them to have the genes to enable it.
+A high self-consistency means that they have all the genes to make the flagellum or to make the pathway work. Likewise, if the genome does not have a flagellum,
+You would not expect it to have those genes. Find consistency if the percentage of rules is exact number of occurrences was correctly predicted.
+A higher number for fine consistency indicates that the genome is more self-consistent.
+A lower number means that the genome is less self-consistent. Define consistency, number is always less than or equal to the course consistency number.
+
+
+COMPLETENESS
+is that percentage of universal rules or genes that appeared in the genome. A higher number indicates the genome is more complete.
+A lower number indicates that jeans normally in this taxonomic group are missing. So this is a pretty good score.
+
+CONTAMINATION
+estimate of the percentage of the genomes DNA that does not belong computed by locating the universal genes that occur more than once.
+A higher number indicates that the genome is contaminated. A lower number indicates that the genome is relatively clean, unlike the other three numbers.
+It's better if the contamination score is lower.
+
+EVALUATION GROUP
+is the taxonomic grouping that was used to determine the universal rules. You'll notice it's bright blue and underlined indicating a hyperlink.
+
+CONTACT COUNT
+number of contigs in the genome for a given assembly size.
+A lower number indicates a better quality genome
+
+DNA SIZES
+the number of base pairs in the genome. This number provides context for the N50, which is the next row.
+
+N50
+number of base pairs in the smallest context such that half the genome's DNA is in context of this size or larger.
+The closer this number is, the DNA size and a bacterial or Archaeal genome, the better quality the genome.
+
+CONTEXT L50
+smallest number of contexts where the lengths some makes up half the genome size.
+These are all just measures that different people have established to determine quality of a genome.
+
+
+POTENTIALLY PROBLEMATIC ROLLS
+This is the heart of the genome quality report.
+The main table lists all the roles who's predicted number of occurrences was different from the actual expected number along with the analysis of the individual features implementing those rules.
+The table has five columns.
+
+ROLE
+is the description of the functional role or gene that is potentially problematic.
+This corresponds to the value of the product column on the Features tab.
+So it's identifying that this is the role that it has a problem with.
+
+PREDICTED COUNTS
+is the number of features or genes implementing the role as predicted by the quality tool.
+Let's start with this one, this three oxy tetranate kinase. Looking across all brucella it was predicted that this genome, because it falls within the brucella genus, would have one gene.
+This leads us to the annotated count, which is the actual number of features genes annotated as implementing the given role. My genome has two, one is predicted, mine has two.
+
+
+FEATURE LINK
+is a link for viewing the features implementing the role. If there are no features, there won't be anything in here.
+If you click on this, it'll open up a page that shows the two genes, it sometimes takes a little while to load, that are identified as being a problem.
+We'll come back to this in just a second.
+
+COMMENT SECTION
+contains text that will help you determine why this role is problematic.
+If you see something like universal role, if the comment includes that it means that the role is considered to be something that you would expect for this gene's taxonomic grouping.
+
+
+uploadig contig files
+contigs (upload types) .fasta forma .fa .fasta .fna not genbank
+
+submitting a job
+
+monitor the job
+
+genome report 
+
+ref genome (highest quality genome, reference, public, generic species and strian)
+
+contamination
+
+checkM, determining genome quality
